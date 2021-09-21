@@ -1,4 +1,4 @@
-package br.jus.tse.ProjetoTeste.entity;
+package br.jus.tse.ProjetoTeste.endereco;
 
 import java.util.HashSet;
 import java.util.Set;
