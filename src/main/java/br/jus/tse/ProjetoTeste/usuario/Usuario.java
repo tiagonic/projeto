@@ -1,4 +1,4 @@
-package br.jus.tse.ProjetoTeste.entity;
+package br.jus.tse.ProjetoTeste.usuario;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
