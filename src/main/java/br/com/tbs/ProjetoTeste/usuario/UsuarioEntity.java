@@ -1,4 +1,4 @@
-package br.jus.tse.ProjetoTeste.usuario;
+package br.com.tbs.ProjetoTeste.usuario;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import br.jus.tse.ProjetoTeste.pessoa.PessoaEntity;
+import br.com.tbs.ProjetoTeste.pessoa.PessoaEntity;
 
 @Entity
 @Table(name = "tb_user")

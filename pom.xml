@@ -10,11 +10,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
-	<groupId>br.jus.tse</groupId>
-	<artifactId>ProjetoTeste</artifactId>
-	<version>ProjetoTeste-0.0.1-SNAPSHOT</version>
-	<name>ProjetoTeste</name>
-	<description>Teste e estudos do Spring Boot</description>
+	<groupId>br.com.tbs</groupId>
+	<artifactId>ProjetoTesteSpringBoot</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ProjetoTesteSpringBoot</name>
+	<description>Teste e estudos do Spring Boot com Java 16 e Angular</description>
 	<properties>
 		<java.version>16</java.version>
 	</properties>

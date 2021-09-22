@@ -1,12 +1,12 @@
-package br.jus.tse.ProjetoTeste.pessoa;
+package br.com.tbs.ProjetoTeste.pessoa;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
-import br.jus.tse.ProjetoTeste.endereco.EnderecoEntity;
-import br.jus.tse.ProjetoTeste.usuario.UsuarioEntity;
+import br.com.tbs.ProjetoTeste.endereco.EnderecoEntity;
+import br.com.tbs.ProjetoTeste.usuario.UsuarioEntity;
 
 public class PessoaDTO implements Serializable {
 	

@@ -1,4 +1,4 @@
-package br.jus.tse.ProjetoTeste.pessoa;
+package br.com.tbs.ProjetoTeste.pessoa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

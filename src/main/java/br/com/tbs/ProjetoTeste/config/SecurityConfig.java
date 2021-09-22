@@ -1,4 +1,4 @@
-package br.jus.tse.ProjetoTeste.config;
+package br.com.tbs.ProjetoTeste.config;
 
 import java.util.Arrays;
 

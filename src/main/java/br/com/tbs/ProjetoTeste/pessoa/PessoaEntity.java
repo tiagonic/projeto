@@ -1,4 +1,4 @@
-package br.jus.tse.ProjetoTeste.pessoa;
+package br.com.tbs.ProjetoTeste.pessoa;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -16,8 +16,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import br.jus.tse.ProjetoTeste.endereco.EnderecoEntity;
-import br.jus.tse.ProjetoTeste.usuario.UsuarioEntity;
+import br.com.tbs.ProjetoTeste.endereco.EnderecoEntity;
+import br.com.tbs.ProjetoTeste.usuario.UsuarioEntity;
 
 @Entity(name = "pessoa")
 @Table(name = "tb_pessoa")

@@ -1,4 +1,4 @@
-package br.jus.tse.ProjetoTeste;
+package br.com.tbs.ProjetoTeste;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package br.jus.tse.ProjetoTeste.pessoa;
+package br.com.tbs.ProjetoTeste.pessoa;
 
 import java.util.List;
 import java.util.Optional;

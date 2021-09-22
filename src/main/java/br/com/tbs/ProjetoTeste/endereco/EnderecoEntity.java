@@ -1,4 +1,4 @@
-package br.jus.tse.ProjetoTeste.endereco;
+package br.com.tbs.ProjetoTeste.endereco;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import br.jus.tse.ProjetoTeste.pessoa.PessoaEntity;
+import br.com.tbs.ProjetoTeste.pessoa.PessoaEntity;
 
 @Entity
 @Table(name = "tb_endereco")
