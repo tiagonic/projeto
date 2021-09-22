@@ -15,7 +15,7 @@ import br.jus.tse.ProjetoTeste.pessoa.PessoaEntity;
 
 @Entity
 @Table(name = "tb_endereco")
-public class Endereco {
+public class EnderecoEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,11 +26,11 @@ public class Endereco {
 	@ManyToMany(mappedBy = "enderecos", fetch = FetchType.EAGER, targetEntity = PessoaEntity.class)
 	Set<PessoaEntity> pessoas = new HashSet<PessoaEntity>();
 
-	public Endereco() {
+	public EnderecoEntity() {
 		this(null, null, null);
 	}
 
-	public Endereco(Long id, String descricao, Set<PessoaEntity> pessoas) {
+	public EnderecoEntity(Long id, String descricao, Set<PessoaEntity> pessoas) {
 		super();
 		this.id = id;
 		this.descricao = descricao;

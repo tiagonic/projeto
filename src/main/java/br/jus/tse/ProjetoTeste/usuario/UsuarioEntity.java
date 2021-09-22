@@ -14,7 +14,7 @@ import br.jus.tse.ProjetoTeste.pessoa.PessoaEntity;
 
 @Entity
 @Table(name = "tb_user")
-public class Usuario {
+public class UsuarioEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,15 +27,15 @@ public class Usuario {
 	@Column(name = "passwd")
 	private String senha;
 	
-	@ManyToOne
+	@ManyToOne(targetEntity = PessoaEntity.class)
 	@JoinColumn(name = "pessoa_id")
 	private PessoaEntity pessoa;
 
-	public Usuario() {
+	public UsuarioEntity() {
 		this(null, null, null, null);
 	}
 
-	public Usuario(Long id, String login, String senha, PessoaEntity pessoa) {
+	public UsuarioEntity(Long id, String login, String senha, PessoaEntity pessoa) {
 		super();
 		this.id = id;
 		this.login = login;
