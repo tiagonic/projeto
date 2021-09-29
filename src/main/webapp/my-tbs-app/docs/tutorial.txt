@@ -1,0 +1,5 @@
+sudo npm install -g @angular/cli
+ng serve -o
+
+
+https://angular.io/start
