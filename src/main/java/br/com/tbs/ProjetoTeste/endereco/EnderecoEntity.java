@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,14 +15,14 @@ import br.com.tbs.ProjetoTeste.pessoa.PessoaEntity;
 @Entity
 @Table(name = "tb_endereco")
 public class EnderecoEntity {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String descricao;
-	
-	@ManyToMany(mappedBy = "enderecos", fetch = FetchType.EAGER, targetEntity = PessoaEntity.class)
+
+	@ManyToMany(mappedBy = "enderecos")
 	Set<PessoaEntity> pessoas = new HashSet<PessoaEntity>();
 
 	public EnderecoEntity() {

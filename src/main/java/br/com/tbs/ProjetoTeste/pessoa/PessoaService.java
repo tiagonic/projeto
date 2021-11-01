@@ -2,6 +2,7 @@ package br.com.tbs.ProjetoTeste.pessoa;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,9 @@ public class PessoaService {
 	private PessoaDAO dao;
 	
 	@Transactional(readOnly = true)
-	public List<PessoaDTO> findAll() {
+	public Set<PessoaDTO> findAll() {
 		List<PessoaEntity> lista = dao.findAll();
-		return lista.stream().map(x -> new PessoaDTO(x)).collect(Collectors.toList());
+		return lista.stream().map(x -> new PessoaDTO(x)).collect(Collectors.toSet());
 	}
 
 	@Transactional(readOnly = true)

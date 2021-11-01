@@ -22,7 +22,6 @@ public class UsuarioEntity {
 	
 	@Basic(optional = false)
 	private String login;
-	
 
 	@Column(name = "passwd")
 	private String senha;

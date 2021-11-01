@@ -1,13 +1,11 @@
 package br.com.tbs.ProjetoTeste.pessoa;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,39 +14,41 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import br.com.tbs.ProjetoTeste.endereco.EnderecoDTO;
 import br.com.tbs.ProjetoTeste.endereco.EnderecoEntity;
+import br.com.tbs.ProjetoTeste.usuario.UsuarioDTO;
 import br.com.tbs.ProjetoTeste.usuario.UsuarioEntity;
 
 @Entity(name = "pessoa")
 @Table(name = "tb_pessoa")
 public class PessoaEntity {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String nome;
-	
-	private LocalDate nascimento;
-	
-	@OneToMany(mappedBy = "pessoa", fetch = FetchType.EAGER, targetEntity = UsuarioEntity.class)
-	private List<UsuarioEntity> usuarios = new ArrayList<UsuarioEntity>();
-	
-	@ManyToMany(fetch = FetchType.EAGER, targetEntity = EnderecoEntity.class)
+
+	private Date nascimento;
+
+	@OneToMany(mappedBy = "pessoa")
+	private Set<UsuarioEntity> usuarios = new HashSet<UsuarioEntity>();
+
+	@ManyToMany
 	@JoinTable(name = "tb_pessoa_endereco")
 	private Set<EnderecoEntity> enderecos = new HashSet<EnderecoEntity>();
-	
+
 	public PessoaEntity() {
 		this(null, null, null, null, null);
 	}
 
-	public PessoaEntity(Long id, String nome, LocalDate dt, List<UsuarioEntity> user, Set<EnderecoEntity> end) {
+	public PessoaEntity(Long id, String nome, Date dt, Set<UsuarioEntity> u, Set<EnderecoEntity> e) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.nascimento = dt;
-		this.usuarios = user;
-		this.enderecos = end;
+		this.usuarios = u;
+		this.enderecos = e;
 	}
 
 	public Long getId() {
@@ -67,28 +67,36 @@ public class PessoaEntity {
 		this.nome = nome;
 	}
 
-	public LocalDate getNascimento() {
+	public Date getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(LocalDate nascimento) {
-		this.nascimento = nascimento;
+	public void setNascimento(Date dt) {
+		this.nascimento = dt;
 	}
 
-	public List<UsuarioEntity> getUsuarios() {
+	public Set<UsuarioEntity> getUsuarios() {
 		return usuarios;
 	}
 
-	public void setUsuarios(List<UsuarioEntity> usuarioEntities) {
-		this.usuarios = usuarioEntities;
+	public Set<UsuarioDTO> getUsuariosDTO() {
+		return usuarios.stream().map(x -> new UsuarioDTO(x)).collect(Collectors.toSet());
+	}
+
+	public void setUsuarios(Set<UsuarioEntity> s) {
+		this.usuarios = s;
 	}
 
 	public Set<EnderecoEntity> getEnderecos() {
 		return enderecos;
 	}
 
-	public void setEnderecos(Set<EnderecoEntity> enderecoEntities) {
-		this.enderecos = enderecoEntities;
+	public Set<EnderecoDTO> getEnderecosDTO() {
+		return getEnderecos().stream().map(x -> new EnderecoDTO(x)).collect(Collectors.toSet());
+	}
+
+	public void setEnderecos(Set<EnderecoEntity> s) {
+		this.enderecos = s;
 	}
 
 }

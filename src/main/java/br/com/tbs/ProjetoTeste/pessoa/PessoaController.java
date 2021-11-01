@@ -1,7 +1,7 @@
 package br.com.tbs.ProjetoTeste.pessoa;
 
-import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ public class PessoaController {
 	private PessoaService service;
 	
 	@GetMapping("all")
-	public ResponseEntity<List<PessoaDTO>> findAll() {
+	public ResponseEntity<Set<PessoaDTO>> findAll() {
 		return ResponseEntity.ok(service.findAll());
 	}
 	
